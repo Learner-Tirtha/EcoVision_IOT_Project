@@ -4,7 +4,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator, load_img, i
 from shutil import move
 
 # Paths for dataset
-dataset_path = r"D:\work\Waste Classification\waste_dataset"  # Base dataset folder
+dataset_path =r"D:\work\Waste Classification\waste_dataset"  # Base dataset folder
 input_organic_path = os.path.join(dataset_path, "organic")
 input_recyclable_path = os.path.join(dataset_path, "recyclable")
 output_train_path = os.path.join(dataset_path, "train")
@@ -56,7 +56,8 @@ def augment_and_distribute_images(input_path, class_name):
                                     save_prefix=save_prefix,
                                     save_format='jpg')
             for _ in range(5):  # Generate 5 augmented images per original image
-                 next(aug_iter) 
+                next(aug_iter)
+
     
     # Process and distribute images
     process_images(train_images, output_train_path)
